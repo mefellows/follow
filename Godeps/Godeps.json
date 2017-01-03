@@ -75,12 +75,29 @@
 			"Rev": "ee05b128a739a0fb76c7ebd3ae4810c1de808d6d"
 		},
 		{
-			"ImportPath": "github.com/mefellows/home/db",
-			"Rev": "e4becfee94ad73161f2d2cca241561b6e964382c"
+			"ImportPath": "github.com/mattes/migrate/driver",
+			"Comment": "v1.2.0-70-gce1b59b",
+			"Rev": "ce1b59bb819416ca67422929b1cb48bb342720b6"
 		},
 		{
-			"ImportPath": "github.com/mefellows/home/models",
-			"Rev": "e4becfee94ad73161f2d2cca241561b6e964382c"
+			"ImportPath": "github.com/mattes/migrate/file",
+			"Comment": "v1.2.0-70-gce1b59b",
+			"Rev": "ce1b59bb819416ca67422929b1cb48bb342720b6"
+		},
+		{
+			"ImportPath": "github.com/mattes/migrate/migrate",
+			"Comment": "v1.2.0-70-gce1b59b",
+			"Rev": "ce1b59bb819416ca67422929b1cb48bb342720b6"
+		},
+		{
+			"ImportPath": "github.com/mattes/migrate/migrate/direction",
+			"Comment": "v1.2.0-70-gce1b59b",
+			"Rev": "ce1b59bb819416ca67422929b1cb48bb342720b6"
+		},
+		{
+			"ImportPath": "github.com/mattes/migrate/pipe",
+			"Comment": "v1.2.0-70-gce1b59b",
+			"Rev": "ce1b59bb819416ca67422929b1cb48bb342720b6"
 		},
 		{
 			"ImportPath": "golang.org/x/net/context",

@@ -5,14 +5,16 @@ import (
 	"log"
 	"regexp"
 
-	"github.com/mattes/migrate/migrate"
-
 	// Postgres driver
 	"github.com/jinzhu/gorm"
-
 	// Postgres driver
 	_ "github.com/jinzhu/gorm/dialects/postgres"
 )
+
+// Manager is an abstraction to get different DB implementations
+type Manager interface {
+	Setup(connectionString string) *gorm.DB
+}
 
 // GetDatabase returns a database handler for a given type.
 func GetDatabase(connectionString string) (db *gorm.DB) {
@@ -37,13 +39,4 @@ func ConnectionStringToGormString(connectionString string) (adapter string, gorm
 	matches := r.FindStringSubmatch(connectionString)
 
 	return matches[1], fmt.Sprintf("host=%s user=%s dbname=%s password=%s port=%s sslmode=disable", matches[4], matches[2], matches[6], matches[3], matches[5])
-}
-
-// Migrate runs DB migrations.
-func Migrate(connectionString string) []error {
-	allErrors, ok := migrate.UpSync(connectionString, "./db/migrations")
-	if !ok {
-		log.Println("[ERROR] unable to run database migrations:", allErrors)
-	}
-	return allErrors
 }
