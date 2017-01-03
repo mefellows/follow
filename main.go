@@ -4,12 +4,14 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/mefellows/follow/config"
 	"github.com/mefellows/follow/controllers"
+	"github.com/mefellows/follow/db"
 )
 
 func main() {
 	c := config.NewConfig()
 	r := gin.Default()
 	r.LoadHTMLGlob("templates/*")
+	db.Migrate(c.ConnectionString)
 
 	// Perform migrations
 	healthController := controllers.NewHealthController(c)
